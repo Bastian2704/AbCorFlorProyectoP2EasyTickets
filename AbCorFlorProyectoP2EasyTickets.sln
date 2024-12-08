@@ -5,7 +5,9 @@ VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbCorFlorProyectoP2EasyTicketsMVC", "AbCorFlorProyectoP2EasyTicketsMVC\AbCorFlorProyectoP2EasyTicketsMVC.csproj", "{C6ABFB0C-3DBF-48A3-A4A0-8D5C48A7F15E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbCorFlorProyectoP2EasyTicketsAPI", "AbCorFlorProyectoP2EasyTicketsAPI\AbCorFlorProyectoP2EasyTicketsAPI.csproj", "{BB8665AD-B3CC-4790-8739-616CCA60AF68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbCorFlorProyectoP2EasyTicketsAPI", "AbCorFlorProyectoP2EasyTicketsAPI\AbCorFlorProyectoP2EasyTicketsAPI.csproj", "{BB8665AD-B3CC-4790-8739-616CCA60AF68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbCorFlorProyectoP2EasyTicketsMAUI", "AbCorFlorProyectoP2EasyTicketsMAUI\AbCorFlorProyectoP2EasyTicketsMAUI.csproj", "{47F9ACEE-229B-40C1-B3BE-00D000E37425}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,12 @@ Global
 		{BB8665AD-B3CC-4790-8739-616CCA60AF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB8665AD-B3CC-4790-8739-616CCA60AF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB8665AD-B3CC-4790-8739-616CCA60AF68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47F9ACEE-229B-40C1-B3BE-00D000E37425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47F9ACEE-229B-40C1-B3BE-00D000E37425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47F9ACEE-229B-40C1-B3BE-00D000E37425}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{47F9ACEE-229B-40C1-B3BE-00D000E37425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47F9ACEE-229B-40C1-B3BE-00D000E37425}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47F9ACEE-229B-40C1-B3BE-00D000E37425}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
