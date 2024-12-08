@@ -1,0 +1,103 @@
+﻿@model ProyectoEasyTicket.Models.ACFTicket
+
+@{
+    ViewData["Title"] = "Comprar";
+}
+
+<h1>Comprar</h1>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ACFEvento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ACFEvento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ACFFecha)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ACFFecha)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ACFLugar)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ACFLugar)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ACFButacaSeccion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ACFButacaSeccion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ACFPrecio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ACFPrecio)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ACFTelefono)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ACFTelefono)
+        </dd>
+    </dl>
+</div>
+
+
+<form asp-action="ACFComprar" method="post">
+    <input type="hidden" asp-for="ACFTicketID" />
+
+    <h4>Información de Pago</h4>
+
+    <div class="form-group">
+        <label for="NomTitular">Titular de la Tarjeta</label>
+        <input type="text" name="NomTitular" class="form-control" required pattern="[A-Za-z\s]+" title="Solo se permiten letras" />
+    </div>
+
+    <div class="form-group">
+        <label for="NumTarjeta">Número de Tarjeta</label>
+        <input type="text" name="NumTarjeta" class="form-control" required pattern="\d{16}" title="El número de tarjeta debe tener 16 dígitos" />
+    </div>
+
+    <div class="form-group">
+        <label for="ExpMes">Mes de Expiración</label>
+        <select name="ExpMes" class="form-control" required>
+            <option value="">Seleccione un mes</option>
+            @for (int i = 1; i <= 12; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ExpAnio">Año de Expiración</label>
+        <select name="ExpAnio" class="form-control" required>
+            <option value="">Seleccione un año</option>
+            @for (int i = DateTime.Now.Year; i <= DateTime.Now.Year + 10; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="CodSeguridad">Código de Seguridad</label>
+        <input type="text" name="CodSeguridad" class="form-control" required pattern="\d{3}" title="El código de seguridad debe tener 3 dígitos" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Comprar" class="btn btn-primary" />
+    </div>
+</form>
+
+
+<div>
+    <a asp-action="ACFIndex">Back to List</a>
+</div>

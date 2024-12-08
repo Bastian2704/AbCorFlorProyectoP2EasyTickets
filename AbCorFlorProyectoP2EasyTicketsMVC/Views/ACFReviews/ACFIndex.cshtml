@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ProyectoEasyTicket.Models.ACFReviews>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1 class="display-4">Reseñas</h1>
+        <p class="text-muted">Explora las opiniones y calificaciones de nuestros usuarios.</p>
+    </div>
+
+    <div class="mb-3 text-end">
+        <a asp-action="ACFCreate" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Crear Nueva Reseña
+        </a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.ACFComentario)</th>
+                    <th>@Html.DisplayNameFor(model => model.ACFCalificacion)</th>
+                    <th>@Html.DisplayNameFor(model => model.ACFFecha)</th>
+                    <th>@Html.DisplayNameFor(model => model.ACFTicket)</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.ACFComentario)</td>
+                        <td>
+                            <!-- Mostrar número de calificación -->
+                            <strong>@item.ACFCalificacion</strong>
+                            <!-- Mostrar estrellas con color amarillo -->
+                            @for (int i = 0; i < item.ACFCalificacion; i++)
+                            {
+                                <i class="bi bi-star-fill text-warning"></i>
+                            }
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.ACFFecha)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ACFTicket.ACFEvento)</td>
+                        <td>
+                            <a asp-action="ACFEdit" asp-route-id="@item.ACFReviewID" class="btn btn-sm btn-warning">
+                                <i class="bi bi-pencil-square"></i> Editar
+                            </a>
+                            <a asp-action="ACFDetails" asp-route-id="@item.ACFReviewID" class="btn btn-sm btn-info text-white">
+                                <i class="bi bi-info-circle"></i> Detalles
+                            </a>
+                            <a asp-action="ACFDelete" asp-route-id="@item.ACFReviewID" class="btn btn-sm btn-danger">
+                                <i class="bi bi-trash"></i> Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

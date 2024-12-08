@@ -1,0 +1,32 @@
+﻿@model ProyectoEasyTicket.Models.ACFReviews
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<div class="container mt-5">
+    <h1 class="text-danger mb-4">¿Está seguro de eliminar esta reseña?</h1>
+    <div class="card shadow-sm border-danger">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Comentario</dt>
+                <dd class="col-sm-9">@Model.ACFComentario</dd>
+
+                <dt class="col-sm-3">Calificación</dt>
+                <dd class="col-sm-9">@Model.ACFCalificacion</dd>
+
+                <dt class="col-sm-3">Fecha</dt>
+                <dd class="col-sm-9">@Model.ACFFecha.ToString("dd/MM/yyyy")</dd>
+
+                <dt class="col-sm-3">Evento</dt>
+                <dd class="col-sm-9">@Model.ACFTicketID</dd>
+            </dl>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="ACFReviewID" />
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+                <a asp-action="ACFIndex" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>

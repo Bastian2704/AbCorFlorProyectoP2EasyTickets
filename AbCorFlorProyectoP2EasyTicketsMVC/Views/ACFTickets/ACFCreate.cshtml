@@ -1,0 +1,71 @@
+﻿@model ProyectoEasyTicket.Models.ACFTicket
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h1>Create</h1>
+
+<h4>Ticket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ACFCreate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ACFEvento" class="control-label"></label>
+                <input asp-for="ACFEvento" class="form-control" />
+                <span asp-validation-for="ACFEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ACFFecha" class="control-label"></label>
+                <input asp-for="ACFFecha" class="form-control" />
+                <span asp-validation-for="ACFFecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ACFLugar" class="control-label"></label>
+                <input asp-for="ACFLugar" class="form-control" />
+                <span asp-validation-for="ACFLugar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ACFButacaSeccion" class="control-label"></label>
+                <input asp-for="ACFButacaSeccion" class="form-control" />
+                <span asp-validation-for="ACFButacaSeccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ACFPrecio" class="control-label"></label>
+                <input asp-for="ACFPrecio" class="form-control" />
+                <span asp-validation-for="ACFPrecio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ACFTelefono" class="control-label"></label>
+                <input asp-for="ACFTelefono" class="form-control" />
+                <span asp-validation-for="ACFTelefono" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ACFVendido" /> @Html.DisplayNameFor(model => model.ACFVendido)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ACFContrasenia" class="control-label"></label>
+                <input asp-for="ACFContrasenia" class="form-control" />
+                <span asp-validation-for="ACFContrasenia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="ACFCreate" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ACFIndex">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,51 @@
+﻿@model ProyectoEasyTicket.Models.ACFReviews
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="container mt-5">
+    <h1 class="text-primary mb-4">Crear una Reseña</h1>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="ACFCreate">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="ACFComentario" class="form-label">ACFComentario</label>
+                    <input asp-for="ACFComentario" class="form-control" placeholder="Escribe tu comentario aquí" />
+                    <span asp-validation-for="ACFComentario" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ACFCalificacion" class="form-label">ACFCalificación</label>
+                    <input asp-for="ACFCalificacion" class="form-control" placeholder="Ingresa una calificación (ej.1 - 5)" />
+                    <span asp-validation-for="ACFCalificacion" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ACFFecha" class="form-label">ACFFecha</label>
+                    <input asp-for="ACFFecha" class="form-control" readonly value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
+                    <span asp-validation-for="ACFFecha" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ACFTicketID" class="form-label">ACFEvento</label>
+                    <select asp-for="ACFTicketID" class="form-control" asp-items="ViewBag.ACFTicketID"></select>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a asp-action="ACFIndex" class="btn btn-secondary">Regresar a la Lista</a>
+                    <button type="submit" class="btn btn-primary">Guardar Reseña</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
