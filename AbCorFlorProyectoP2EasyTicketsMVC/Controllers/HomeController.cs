@@ -1,4 +1,7 @@
 using AbCorFlorProyectoP2EasyTicketsMVC.Models;
+using AbCorFlorProyectoP2EasyTicketsMVC.Data;
+using Microsoft.EntityFrameworkCore;
+
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,15 +10,20 @@ namespace AbCorFlorProyectoP2EasyTicketsMVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AbCorFlorProyectoP2EasyTicketsMVCContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+
+        public HomeController(AbCorFlorProyectoP2EasyTicketsMVCContext context, ILogger<HomeController> logger)
         {
+            _context = context;
             _logger = logger;
+
         }
 
-        public IActionResult ACFIndex()
+        public async Task<IActionResult> ACFIndexAsync()
         {
-            return View();
+
+            return View(await _context.ACFTicket.ToListAsync());
         }
 
         public IActionResult ACFPrivacy()
