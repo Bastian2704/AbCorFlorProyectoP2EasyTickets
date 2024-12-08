@@ -5,6 +5,7 @@ namespace ProyectoEasyTicket.Models
 {
     public class ACFReviews
     {
+        //hola
         [Key]
         public int ACFReviewID { get; set; }
         [StringLength(500)]
