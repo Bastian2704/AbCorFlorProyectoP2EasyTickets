@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbCorFlorProyectoP2EasyTicketsMVC", "AbCorFlorProyectoP2EasyTicketsMVC\AbCorFlorProyectoP2EasyTicketsMVC.csproj", "{C6ABFB0C-3DBF-48A3-A4A0-8D5C48A7F15E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbCorFlorProyectoP2EasyTicketsMVC", "AbCorFlorProyectoP2EasyTicketsMVC\AbCorFlorProyectoP2EasyTicketsMVC.csproj", "{C6ABFB0C-3DBF-48A3-A4A0-8D5C48A7F15E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbCorFlorProyectoP2EasyTicketsAPI", "AbCorFlorProyectoP2EasyTicketsAPI\AbCorFlorProyectoP2EasyTicketsAPI.csproj", "{BB8665AD-B3CC-4790-8739-616CCA60AF68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C6ABFB0C-3DBF-48A3-A4A0-8D5C48A7F15E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6ABFB0C-3DBF-48A3-A4A0-8D5C48A7F15E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6ABFB0C-3DBF-48A3-A4A0-8D5C48A7F15E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB8665AD-B3CC-4790-8739-616CCA60AF68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB8665AD-B3CC-4790-8739-616CCA60AF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB8665AD-B3CC-4790-8739-616CCA60AF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB8665AD-B3CC-4790-8739-616CCA60AF68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
