@@ -13,7 +13,7 @@ namespace AbCorFlorProyectoP2EasyTicketsMAUI.Models
         public DateTime ACFFecha { get; set; }
         public string ACFLugar { get; set; }
         public string ACFButacaSeccion { get; set; }
-        public int ACFPrecio { get; set; }
+        public decimal ACFPrecio { get; set; }
         public string ACFTelefono { get; set; }
         public bool ACFVendido { get; set; }
         public string ACFContrasenia { get; set; }
