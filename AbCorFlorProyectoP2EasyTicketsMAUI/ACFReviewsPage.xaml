@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AbCorFlorProyectoP2EasyTicketsMAUI.ACFReviewsPage"
+             Title="ACFReviewsPage">
+    <StackLayout Padding="10">
+        <!-- Título -->
+        <Label Text="¡Reviews!"
+           FontSize="24"
+           HorizontalOptions="Center"
+           TextColor="Blue" />
+
+        <!-- Subtítulo -->
+        <Label Text="Comentarios de las compras previas"
+           FontSize="14"
+           HorizontalOptions="Center"
+           TextColor="Gray"
+           Margin="0,5,0,20" />
+
+        <!-- Botón para mostrar tickets -->
+        <Button Text="Mostrar Reviews"
+            FontSize="16"
+            BackgroundColor="LightBlue"
+            TextColor="White"
+            Clicked="Button_Clicked" />
+
+        <!-- Lista de Tickets Disponibles -->
+        <ListView x:Name="ReviewsCollectionView"
+              Margin="0,20,0,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame BorderColor="LightGray" Margin="5" Padding="10">
+                            <StackLayout>
+                                <Label Text="{Binding ACFComentario}" FontSize="18" FontAttributes="Bold" />
+                                <Label Text="{Binding ACFCalificacion}" />
+                                <Label Text="{Binding ACFFecha, StringFormat='Fecha: {0:dd/MM/yyyy HH:mm}'}" />
+                                <Label Text="{Binding ACFTicket}" />
+
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
