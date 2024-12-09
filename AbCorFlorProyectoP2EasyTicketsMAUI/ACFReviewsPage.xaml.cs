@@ -21,7 +21,7 @@ public partial class ACFReviewsPage : ContentPage
         {
             var ACFReview = response.Content.ReadAsStringAsync().Result;
             var ACFReviewsList = JsonConvert.DeserializeObject<List<ACFReviews>>(ACFReview);
-            ReviewsCollectionView.ItemsSource = ACFReviewsList.ToList();
+            ReviewsCollectionView.ItemsSource = ACFReviewsList;
 
         }
     }

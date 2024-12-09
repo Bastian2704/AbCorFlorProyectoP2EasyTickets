@@ -33,9 +33,15 @@
                         <Frame BorderColor="LightGray" Margin="5" Padding="10">
                             <StackLayout>
                                 <Label Text="{Binding ACFComentario}" FontSize="18" FontAttributes="Bold" />
-                                <Label Text="{Binding ACFCalificacion}" />
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="star_filled.png" HeightRequest="20" IsVisible="{Binding ACFCalificacion, Converter={StaticResource ACFEstrellas}, ConverterParameter=1}" />
+                                    <Image Source="star_filled.png" HeightRequest="20" IsVisible="{Binding ACFCalificacion, Converter={StaticResource ACFEstrellas}, ConverterParameter=2}" />
+                                    <Image Source="star_filled.png" HeightRequest="20" IsVisible="{Binding ACFCalificacion, Converter={StaticResource ACFEstrellas}, ConverterParameter=3}" />
+                                    <Image Source="star_filled.png" HeightRequest="20" IsVisible="{Binding ACFCalificacion, Converter={StaticResource ACFEstrellas}, ConverterParameter=4}" />
+                                    <Image Source="star_filled.png" HeightRequest="20" IsVisible="{Binding ACFCalificacion, Converter={StaticResource ACFEstrellas}, ConverterParameter=5}" />
+                                </StackLayout>
                                 <Label Text="{Binding ACFFecha, StringFormat='Fecha: {0:dd/MM/yyyy HH:mm}'}" />
-                                <Label Text="{Binding ACFTicket}" />
+                                <Label Text="{Binding ACFTicketID,StringFormat='Ticket ID: {0}'}" />
 
                             </StackLayout>
                         </Frame>

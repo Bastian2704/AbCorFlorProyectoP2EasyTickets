@@ -13,6 +13,6 @@ namespace AbCorFlorProyectoP2EasyTicketsMAUI.Models
         public int ACFCalificacion { get; set; }
         public DateTime ACFFecha { get; set; }
         public int ACFTicketID { get; set; }
-        public object ACFTicket { get; set; }
+        public ACFTicket ACFTicket { get; set; }
     }
 }
