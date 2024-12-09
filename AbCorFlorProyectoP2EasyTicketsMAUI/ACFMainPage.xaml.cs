@@ -14,20 +14,37 @@ namespace AbCorFlorProyectoP2EasyTicketsMAUI
          
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            var client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:7135/api/");
-            var response = client.GetAsync("ACFTicket").Result;
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                var ACFTickets = response.Content.ReadAsStringAsync().Result;
-                var ACFTicketsList = JsonConvert.DeserializeObject<List<ACFTicket>>(ACFTickets);
-                TicketsCollectionView.ItemsSource = ACFTicketsList;
+                var client = new HttpClient
+                {
+                    BaseAddress = new Uri("https://localhost:7135/api/")
+                };
+
+                var response = await client.GetAsync("ACFTicket");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var ACFTickets = await response.Content.ReadAsStringAsync();
+
+                    var ACFTicketsList = JsonConvert.DeserializeObject<List<ACFTicket>>(ACFTickets);
+
+                    var availableTickets = ACFTicketsList.Where(ticket => !ticket.ACFVendido).ToList();
+
+                    TicketsCollectionView.ItemsSource = availableTickets;
+                }
+                else
+                {
+                    await DisplayAlert("Error", "No se pudieron cargar los tickets disponibles.", "OK");
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", $"Ocurrió un error: {ex.Message}", "OK");
             }
         }
-
 
     }
 
