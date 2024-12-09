@@ -3,46 +3,67 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AbCorFlorProyectoP2EasyTicketsMAUI.ACFReviewsPage"
              Title="ACFReviewsPage">
-    <StackLayout Padding="10">
-        <!-- Título -->
-        <Label Text="¡Reviews!"
-           FontSize="24"
-           HorizontalOptions="Center"
-           TextColor="Blue" />
+
+    <StackLayout Padding="20">
+        <!-- Saludo dinámico -->
+        <Frame BackgroundColor="#4A204E" Padding="15" CornerRadius="15" Margin="0,10" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="✨ ¡Bienvenido a las Reviews! ✨" 
+                       FontSize="20" 
+                       TextColor="#FFD700" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center" />
+            </StackLayout>
+        </Frame>
 
         <!-- Subtítulo -->
-        <Label Text="Comentarios de las compras previas"
-           FontSize="14"
-           HorizontalOptions="Center"
-           TextColor="Gray"
-           Margin="0,5,0,20" />
+        <Label Text="Comentarios de las conciertos recientes"
+               FontSize="16"
+               HorizontalOptions="Center"
+               TextColor="#D3D3D3"
+               Margin="0,10,0,20" />
 
-        <!-- Botón para mostrar tickets -->
+        <!-- Botón para mostrar reviews -->
         <Button Text="Mostrar Reviews"
-            FontSize="16"
-            BackgroundColor="LightBlue"
-            TextColor="White"
-            Clicked="Button_Clicked" />
+                FontSize="18"
+                BackgroundColor="#6B1B7F"
+                TextColor="#FFD700"
+                BorderColor="#FFD700"
+                CornerRadius="15"
+                Padding="10"
+                Margin="0,20"
+                Clicked="Button_Clicked" />
 
-        <!-- Lista de Tickets Disponibles -->
+        <!-- Lista de Reviews -->
         <ListView x:Name="ReviewsCollectionView"
-              Margin="0,20,0,0">
+                  Margin="0,20,0,0"
+                  BackgroundColor="#4A204E"
+                  SeparatorColor="#6B1B7F">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame BorderColor="LightGray" Margin="5" Padding="10">
+                        <Frame BorderColor="#FFD700" BackgroundColor="#2E003E" Margin="5" Padding="10" CornerRadius="10">
                             <StackLayout>
-                                <Label Text="{Binding ACFComentario}" FontSize="18" FontAttributes="Bold" />
-                                <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding ACFComentario}" 
+                                       FontSize="18" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#FFD700" />
+
+                                <!-- Calificación con estrellas -->
+                                <StackLayout Orientation="Horizontal" Margin="0,5,0,5">
                                     <Image Source="star_filled.png" HeightRequest="20" IsVisible="{Binding ACFCalificacion, Converter={StaticResource ACFEstrellas}, ConverterParameter=1}" />
                                     <Image Source="star_filled.png" HeightRequest="20" IsVisible="{Binding ACFCalificacion, Converter={StaticResource ACFEstrellas}, ConverterParameter=2}" />
                                     <Image Source="star_filled.png" HeightRequest="20" IsVisible="{Binding ACFCalificacion, Converter={StaticResource ACFEstrellas}, ConverterParameter=3}" />
                                     <Image Source="star_filled.png" HeightRequest="20" IsVisible="{Binding ACFCalificacion, Converter={StaticResource ACFEstrellas}, ConverterParameter=4}" />
                                     <Image Source="star_filled.png" HeightRequest="20" IsVisible="{Binding ACFCalificacion, Converter={StaticResource ACFEstrellas}, ConverterParameter=5}" />
                                 </StackLayout>
-                                <Label Text="{Binding ACFFecha, StringFormat='Fecha: {0:dd/MM/yyyy HH:mm}'}" />
-                                <Label Text="{Binding ACFTicketID,StringFormat='Ticket ID: {0}'}" />
 
+                                <Label Text="{Binding ACFFecha, StringFormat='Fecha: {0:dd/MM/yyyy HH:mm}'}" 
+                                       FontSize="14" 
+                                       TextColor="White" />
+                                <Label Text="{Binding ACFTicketID, StringFormat='Ticket ID: {0}'}" 
+                                       FontSize="14" 
+                                       TextColor="White" />
                             </StackLayout>
                         </Frame>
                     </ViewCell>
