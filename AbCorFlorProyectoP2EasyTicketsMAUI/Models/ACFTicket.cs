@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AbCorFlorProyectoP2EasyTicketsMAUI.Models
 {
-    internal class ACFTicket
+    public class ACFTicket
     {
         public int ACFTicketID { get; set; }
         public string ACFEvento { get; set; }

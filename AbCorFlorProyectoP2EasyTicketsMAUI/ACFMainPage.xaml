@@ -4,72 +4,40 @@
              x:Class="AbCorFlorProyectoP2EasyTicketsMAUI.MainPage">
 
 
+    <ListView ItemsSource="{Binding Tickets}"
+          Margin="0,20,0,0"
+          BackgroundColor="#4A204E"
+          SeparatorColor="#6B1B7F">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Frame BorderColor="#FFD700" BackgroundColor="#2E003E" Margin="5" Padding="10" CornerRadius="10">
+                        <StackLayout>
+                            <Label Text="{Binding ACFEvento}" 
+                               FontSize="18" 
+                               FontAttributes="Bold" 
+                               TextColor="#FFD700" />
+                            <Label Text="{Binding ACFFecha, StringFormat='Fecha: {0:dd/MM/yyyy HH:mm}'}" 
+                               FontSize="14" 
+                               TextColor="White" />
+                            <Label Text="{Binding ACFLugar, StringFormat='Lugar: {0}'}" 
+                               FontSize="14" 
+                               TextColor="White" />
+                            <Label Text="{Binding ACFButacaSeccion, StringFormat='Butaca/Sección: {0}'}" 
+                               FontSize="14" 
+                               TextColor="White" />
+                            <Label Text="{Binding ACFPrecio, StringFormat='Precio: ${0}'}" 
+                               FontSize="14" 
+                               TextColor="#FFD700" 
+                               FontAttributes="Bold" />
+                            <Label Text="{Binding ACFTelefono, StringFormat='Teléfono: {0}'}" 
+                               FontSize="14" 
+                               TextColor="White" />
+                        </StackLayout>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 
-    <StackLayout Padding="20">
-        <!-- Saludo dinámico -->
-        <Frame BackgroundColor="#4A204E" Padding="15" CornerRadius="15" Margin="0,10" HorizontalOptions="FillAndExpand">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Label Text="👋 ¡Hola, bienvenido a EasyTicket!" 
-                       FontSize="20" 
-                       TextColor="#FFD700" 
-                       FontAttributes="Bold" 
-                       HorizontalOptions="Center" />
-            </StackLayout>
-        </Frame>
-
-        <!-- Título -->
-        <Label Text="Compra y vende entradas para eventos deportivos, conciertos y más."
-               FontSize="16"
-               HorizontalOptions="Center"
-               TextColor="#D3D3D3"
-               Margin="0,10,0,20" />
-
-        <!-- Botón para mostrar tickets -->
-        <Button Text="Mostrar Tickets Disponibles"
-                FontSize="18"
-                BackgroundColor="#6B1B7F"
-                TextColor="#FFD700"
-                BorderColor="#FFD700"
-                CornerRadius="15"
-                Padding="10"
-                Margin="0,20"
-                Clicked="Button_Clicked" />
-
-        <!-- Lista de Tickets Disponibles -->
-        <ListView x:Name="TicketsCollectionView"
-                  Margin="0,20,0,0"
-                  BackgroundColor="#4A204E"
-                  SeparatorColor="#6B1B7F">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Frame BorderColor="#FFD700" BackgroundColor="#2E003E" Margin="5" Padding="10" CornerRadius="10">
-                            <StackLayout>
-                                <Label Text="{Binding ACFEvento}" 
-                                       FontSize="18" 
-                                       FontAttributes="Bold" 
-                                       TextColor="#FFD700" />
-                                <Label Text="{Binding ACFFecha, StringFormat='Fecha: {0:dd/MM/yyyy HH:mm}'}" 
-                                       FontSize="14" 
-                                       TextColor="White" />
-                                <Label Text="{Binding ACFLugar, StringFormat='Lugar: {0}'}" 
-                                       FontSize="14" 
-                                       TextColor="White" />
-                                <Label Text="{Binding ACFButacaSeccion, StringFormat='Butaca/Sección: {0}'}" 
-                                       FontSize="14" 
-                                       TextColor="White" />
-                                <Label Text="{Binding ACFPrecio, StringFormat='Precio: ${0}'}" 
-                                       FontSize="14" 
-                                       TextColor="#FFD700" 
-                                       FontAttributes="Bold" />
-                                <Label Text="{Binding ACFTelefono, StringFormat='Teléfono: {0}'}" 
-                                       FontSize="14" 
-                                       TextColor="White" />
-                            </StackLayout>
-                        </Frame>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
 </ContentPage>
