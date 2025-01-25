@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AbCorFlorProyectoP2EasyTicketsMAUI.Views.ACFDetallesView"
+             xmlns:vm="clr-namespace:AbCorFlorProyectoP2EasyTicketsMAUI.ViewModels"
+             Title="ACFDetallesView">
+    <ContentPage.BindingContext>
+        <vm:ACFEventosDetallesViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+            <StackLayout Padding="7" Margin="10">
+            <Label Text="{Binding Eventos.Name}" FontSize="20" />
+            <Label Text="{Binding Eventos.Url}" FontSize="14" TextColor="Blue"/>
+            </StackLayout>
+    </ScrollView>
+</ContentPage>

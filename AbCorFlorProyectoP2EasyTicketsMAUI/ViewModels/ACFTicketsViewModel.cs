@@ -57,7 +57,7 @@ namespace AbCorFlorProyectoP2EasyTicketsMAUI.ViewModels
                         Debug.WriteLine($"Tickets obtenidos: {ticketsList.Count}");
                         foreach (var ticket in ticketsList)
                         {
-                            Debug.WriteLine($"Evento: {ticket.ACFEvento}, Fecha: {ticket.ACFFecha}, Lugar: {ticket.ACFLugar}");
+                            Debug.WriteLine($"Evento: {ticket.ACFEvento}, Fecha: {ticket.ACFFecha}, Lugar: {ticket.ACFLugar}, Ticket: {ticket.ACFTicketID}");
                         }
 
                         var availableTickets = ticketsList.Where(ticket => !ticket.ACFVendido).ToList();

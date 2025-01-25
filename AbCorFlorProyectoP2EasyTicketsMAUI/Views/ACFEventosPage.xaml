@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AbCorFlorProyectoP2EasyTicketsMAUI.Views.ACFEventosPage"
+             xmlns:vm="clr-namespace:AbCorFlorProyectoP2EasyTicketsMAUI.ViewModels"
+             Title="ACFEventosPage">
+    <ContentPage.BindingContext>
+        <vm:ACFEventosViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <ActivityIndicator IsRunning="{Binding Cargando}" IsVisible="{Binding Cargando}"/>
+                <CollectionView ItemsSource="{Binding Eventos}" SelectionMode="Single" SelectionChanged="OnSelectionChanged">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Margin="10">
+                                <Label Text="{Binding Name}" FontSize="20" />
+                                <Label Text="{Binding Url}" FontSize="14" TextColor="Blue"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

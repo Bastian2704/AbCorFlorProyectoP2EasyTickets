@@ -4,6 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AbCorFlorProyectoP2EasyTicketsMAUI"
+    xmlns:views="clr-namespace:AbCorFlorProyectoP2EasyTicketsMAUI.Views"
     Shell.FlyoutBehavior="Disabled"
     
     Title="AbCorFlorProyectoP2EasyTicketsMAUI">
@@ -16,6 +17,9 @@
         <ShellContent
             Title="Reviews"
             ContentTemplate="{DataTemplate local:ACFReviewsPage}" />
+        <ShellContent
+           Title="Eventos"
+           ContentTemplate="{DataTemplate views:ACFEventosPage}" />
 
     </TabBar>
 

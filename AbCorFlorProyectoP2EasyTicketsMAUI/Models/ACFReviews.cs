@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AbCorFlorProyectoP2EasyTicketsMAUI.Models
 {
-    internal class ACFReviews
+    public class ACFReviews
     {
         public int ACFReviewID { get; set; }
         public string ACFComentario { get; set; }
