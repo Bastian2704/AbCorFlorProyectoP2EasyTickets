@@ -9,6 +9,7 @@
     </ContentPage.BindingContext>
     <ScrollView>
             <StackLayout Padding="7" Margin="10">
+            <Label Text="{Binding Eventos.Id}" FontSize="20" />
             <Label Text="{Binding Eventos.Name}" FontSize="20" />
             <Label Text="{Binding Eventos.Url}" FontSize="14" TextColor="Blue"/>
                 

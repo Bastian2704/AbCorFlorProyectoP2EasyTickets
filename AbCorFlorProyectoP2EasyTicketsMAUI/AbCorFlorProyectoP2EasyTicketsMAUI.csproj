@@ -78,10 +78,16 @@
 	  <Compile Update="ACFMainPage.xaml.cs">
 	    <DependentUpon>ACFMainPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\ACFEventosGuardados.xaml.cs">
+	    <DependentUpon>ACFEventosGuardados.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\ACFDetallesView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ACFEventosGuardados.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ACFEventosPage.xaml">

@@ -20,7 +20,9 @@
         <ShellContent
            Title="Eventos"
            ContentTemplate="{DataTemplate views:ACFEventosPage}" />
-
+        <ShellContent
+           Title="Eventos Guardados"
+           ContentTemplate="{DataTemplate views:ACFEventosGuardados}" />
     </TabBar>
 
 </Shell>

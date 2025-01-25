@@ -27,7 +27,7 @@
                             <Label Text="{Binding ACFFecha, StringFormat='Fecha: {0:dd/MM/yyyy HH:mm}'}" 
                        FontSize="14" 
                        TextColor="White" />
-                            <Label Text="{Binding ACFCalificacion, StringFormat='Lugar: {0}'}" 
+                            <Label Text="{Binding ACFCalificacion, StringFormat='Calificación 1-5: {0}'}" 
                        FontSize="14" 
                        TextColor="White" />
                         </StackLayout>
