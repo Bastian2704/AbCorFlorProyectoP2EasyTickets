@@ -1,4 +1,5 @@
 ﻿using AbCorFlorProyectoP2EasyTicketsMAUI.Models;
+using AbCorFlorProyectoP2EasyTicketsMAUI.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,7 +14,7 @@ namespace AbCorFlorProyectoP2EasyTicketsMAUI.ViewModels
 {
     public class ACFEventosViewModel : INotifyPropertyChanged
     {
-        private readonly ACFServicioApi _ACFServicioAPI;
+        private readonly ACFApiPublicaService _apiService;
         public ObservableCollection<ACFEventos> Eventos { get; set; } = new();
 
         private bool _cargando;
@@ -22,27 +23,45 @@ namespace AbCorFlorProyectoP2EasyTicketsMAUI.ViewModels
             get => _cargando;
             set
             {
-                _cargando = value;
-                OnPropertyChanged();
+                if (_cargando != value)
+                {
+                    _cargando = value;
+                    OnPropertyChanged();
+                }
             }
         }
 
         public ACFEventosViewModel()
         {
-            _ACFServicioAPI = new ACFServicioApi();
-            cargarEvento();
+            _apiService = new ACFApiPublicaService(); // Inicializa el servicio de API
+            CargarEventos(); // Carga los eventos al inicializar el ViewModel
         }
 
-        private async void cargarEvento()
+        private async void CargarEventos()
         {
-            Cargando = true;
-            var events = await _ACFServicioAPI.GetEventoAsync();
-            Eventos.Clear();
-            foreach (var even in events)
+            Cargando = true; // Indica que la carga está en progreso
+
+            try
             {
-                Eventos.Add(even);
+                // Obtiene los eventos desde la API
+                var eventos = await _apiService.GetEventosAsync();
+
+                // Limpia la lista actual y agrega los nuevos eventos
+                Eventos.Clear();
+                foreach (var evento in eventos)
+                {
+                    Eventos.Add(evento);
+                }
             }
-            Cargando = false;
+            catch (Exception ex)
+            {
+                // Maneja errores (puedes mostrar un mensaje al usuario o loguear el error)
+                Console.WriteLine($"Error al cargar eventos: {ex.Message}");
+            }
+            finally
+            {
+                Cargando = false; // Indica que la carga ha terminado
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

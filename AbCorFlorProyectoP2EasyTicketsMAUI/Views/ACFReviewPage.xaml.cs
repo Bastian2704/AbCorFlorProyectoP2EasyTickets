@@ -1,13 +1,11 @@
-using Newtonsoft.Json;
-using AbCorFlorProyectoP2EasyTicketsMAUI.Models;
 using AbCorFlorProyectoP2EasyTicketsMAUI.ViewModels;
 
-namespace AbCorFlorProyectoP2EasyTicketsMAUI;
+namespace AbCorFlorProyectoP2EasyTicketsMAUI.Views;
 
-public partial class ACFReviewsPage : ContentPage
+public partial class ACFReviewPage : ContentPage
 {
     private readonly ACFReviewsViewModel _viewModel;
-    public ACFReviewsPage()
+    public ACFReviewPage()
 	{
 		InitializeComponent();
         BindingContext = _viewModel = new ACFReviewsViewModel();

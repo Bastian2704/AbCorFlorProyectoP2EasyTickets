@@ -15,8 +15,8 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Margin="10">
-                                <Label Text="{Binding Name}" FontSize="20" />
-                                <Label Text="{Binding Url}" FontSize="14" TextColor="Blue"/>
+                                <Label Text="{Binding Id}" FontSize="20" />
+                                <Label Text="{Binding Name}" FontSize="14" TextColor="Blue"/>
                             </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>

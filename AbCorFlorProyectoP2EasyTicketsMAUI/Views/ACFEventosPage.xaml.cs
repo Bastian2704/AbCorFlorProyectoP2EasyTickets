@@ -6,19 +6,21 @@ public partial class ACFEventosPage : ContentPage
 	public ACFEventosPage()
 	{
 		InitializeComponent();
-	}
+        BindingContext = new ACFEventosViewModel();
+    }
     private async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         if (e.CurrentSelection.Count > 0)
         {
-            var evenSelec = e.CurrentSelection[0] as ACFEventos;
+            var evenSelec = e.CurrentSelection[0] as ACFEventos; 
             if (evenSelec != null)
             {
-                var ACFDetallesView = new ACFDetallesView();
-                var EventosDetallesViewModel = (ACFEventosDetallesViewModel)ACFDetallesView.BindingContext;
-                EventosDetallesViewModel.initialize(evenSelec);
-                await Navigation.PushAsync(ACFDetallesView);
+                var detallesView = new ACFDetallesView();
+                var detallesViewModel = (ACFEventosDetallesViewModel)detallesView.BindingContext;
+                detallesViewModel.Initialize(evenSelec);
+                await Navigation.PushAsync(detallesView);
             }
+
             ((CollectionView)sender).SelectedItem = null;
         }
     }

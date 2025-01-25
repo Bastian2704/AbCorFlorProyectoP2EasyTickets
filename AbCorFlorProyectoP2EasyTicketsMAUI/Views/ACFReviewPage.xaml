@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AbCorFlorProyectoP2EasyTicketsMAUI.ACFReviewsPage"
+             x:Class="AbCorFlorProyectoP2EasyTicketsMAUI.Views.ACFReviewPage"
              xmlns:vm="clr-namespace:AbCorFlorProyectoP2EasyTicketsMAUI.ViewModels"
-             Title="ACFReviewsPage">
-
+             Title="ACFReviewPage">
     <ContentPage.BindingContext>
         <vm:ACFReviewsViewModel />
     </ContentPage.BindingContext>
 
     <ListView ItemsSource="{Binding Reviews}"
-      Margin="0,20,0,0"
-      BackgroundColor="#4A204E"
-      SeparatorColor="#6B1B7F">
+  Margin="0,20,0,0"
+  BackgroundColor="#4A204E"
+  SeparatorColor="#6B1B7F">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
                     <Frame BorderColor="#FFD700" BackgroundColor="#2E003E" Margin="5" Padding="10" CornerRadius="10">
                         <StackLayout>
                             <Label Text="{Binding ACFTicketID, StringFormat='Ticket ID: {0}'}" 
-                           FontSize="18" 
-                           FontAttributes="Bold" 
-                           TextColor="#FFD700" />
+                       FontSize="18" 
+                       FontAttributes="Bold" 
+                       TextColor="#FFD700" />
                             <Label Text="{Binding ACFComentario, StringFormat='Comentario: {0}'}" 
-                           FontSize="14" 
-                           TextColor="White" />
+                       FontSize="14" 
+                       TextColor="White" />
                             <Label Text="{Binding ACFFecha, StringFormat='Fecha: {0:dd/MM/yyyy HH:mm}'}" 
-                           FontSize="14" 
-                           TextColor="White" />
+                       FontSize="14" 
+                       TextColor="White" />
                             <Label Text="{Binding ACFCalificacion, StringFormat='Lugar: {0}'}" 
-                           FontSize="14" 
-                           TextColor="White" />
+                       FontSize="14" 
+                       TextColor="White" />
                         </StackLayout>
                     </Frame>
                 </ViewCell>

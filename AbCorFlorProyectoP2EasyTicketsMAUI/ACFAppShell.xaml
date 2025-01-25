@@ -16,7 +16,7 @@
             ContentTemplate="{DataTemplate local:MainPage}" />
         <ShellContent
             Title="Reviews"
-            ContentTemplate="{DataTemplate local:ACFReviewsPage}" />
+            ContentTemplate="{DataTemplate views:ACFReviewPage}" />
         <ShellContent
            Title="Eventos"
            ContentTemplate="{DataTemplate views:ACFEventosPage}" />

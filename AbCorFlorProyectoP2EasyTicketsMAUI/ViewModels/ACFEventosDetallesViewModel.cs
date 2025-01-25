@@ -5,7 +5,9 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using AbCorFlorProyectoP2EasyTicketsMAUI.Models;
+using AbCorFlorProyectoP2EasyTicketsMAUI.Services;
 
 namespace AbCorFlorProyectoP2EasyTicketsMAUI.ViewModels
 {
@@ -22,13 +24,43 @@ namespace AbCorFlorProyectoP2EasyTicketsMAUI.ViewModels
             }
         }
 
+        public ICommand GuardarCommand { get; }
+        public ICommand CancelarCommand { get; }
+
+        private readonly ACFDataService _dataService;
+
         public ACFEventosDetallesViewModel()
         {
+            // BD SIN argumentos
+            _dataService = new ACFDataService();
 
+            GuardarCommand = new Command(OnGuardar);
+            CancelarCommand = new Command(OnCancelar);
         }
-        public void initialize(ACFEventos evenSelec)
+
+        public void Initialize(ACFEventos eventoSeleccionado)
         {
-            Eventos = evenSelec;
+            Eventos = eventoSeleccionado ?? new ACFEventos(); // Inicializa un nuevo evento si es nulo
+        }
+
+        private async void OnGuardar()
+        {
+            if (Eventos != null)
+            {
+                // Guardar evento en BD
+                await _dataService.SaveEventAsync(Eventos);
+                await Application.Current.MainPage.DisplayAlert("Éxito", "Evento guardado correctamente.", "OK");
+            }
+            else
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "No hay un evento para guardar.", "OK");
+            }
+        }
+
+        private void OnCancelar()
+        {
+            Eventos = null;
+            Application.Current.MainPage.Navigation.PopAsync(); 
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

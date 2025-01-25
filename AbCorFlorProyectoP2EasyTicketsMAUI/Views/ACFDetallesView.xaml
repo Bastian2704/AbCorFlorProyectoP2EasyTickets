@@ -11,6 +11,18 @@
             <StackLayout Padding="7" Margin="10">
             <Label Text="{Binding Eventos.Name}" FontSize="20" />
             <Label Text="{Binding Eventos.Url}" FontSize="14" TextColor="Blue"/>
-            </StackLayout>
+                
+            <Button Text="Guardar" 
+                    Command="{Binding GuardarCommand}" 
+                    BackgroundColor="Green" 
+                    TextColor="White" 
+                    HorizontalOptions="FillAndExpand" />
+
+            <Button Text="Cancelar" 
+                    Command="{Binding CancelarCommand}" 
+                    BackgroundColor="Red" 
+                    TextColor="White" 
+                    HorizontalOptions="FillAndExpand" />
+        </StackLayout>
     </ScrollView>
 </ContentPage>
