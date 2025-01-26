@@ -12,8 +12,11 @@
 
     <TabBar>
         <ShellContent
-            Title="Tickets"
+            Title="Home"
             ContentTemplate="{DataTemplate local:MainPage}" />
+        <ShellContent
+            Title="Tickets"
+            ContentTemplate="{DataTemplate views:ACFTicketsPage}" />
         <ShellContent
             Title="Reviews"
             ContentTemplate="{DataTemplate views:ACFReviewPage}" />

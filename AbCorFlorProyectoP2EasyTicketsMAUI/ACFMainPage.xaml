@@ -1,50 +1,71 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:AbCorFlorProyectoP2EasyTicketsMAUI.ViewModels"
              x:Class="AbCorFlorProyectoP2EasyTicketsMAUI.MainPage">
 
-    <ContentPage.BindingContext>
-        <vm:ACFTicketViewModel />
-    </ContentPage.BindingContext>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" BackgroundColor="Purple">
 
-    <ListView ItemsSource="{Binding Tickets}"
-          Margin="0,20,0,0"
-          BackgroundColor="#4A204E"
-          SeparatorColor="#6B1B7F">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <Frame BorderColor="#FFD700" BackgroundColor="#2E003E" Margin="5" Padding="10" CornerRadius="10">
-                        <StackLayout>
-                            <Label Text="{Binding ACFEvento}" 
-                               FontSize="18" 
-                               FontAttributes="Bold" 
-                               TextColor="#FFD700" />
-                            <Label Text="{Binding ACFTicketID, StringFormat='TicketID: {0}'}" 
-                               FontSize="14" 
-                               TextColor="White" />
-                            <Label Text="{Binding ACFFecha, StringFormat='Fecha: {0:dd/MM/yyyy HH:mm}'}" 
-                               FontSize="14" 
-                               TextColor="White" />
-                            <Label Text="{Binding ACFLugar, StringFormat='Lugar: {0}'}" 
-                               FontSize="14" 
-                               TextColor="White" />
-                            <Label Text="{Binding ACFButacaSeccion, StringFormat='Butaca/Sección: {0}'}" 
-                               FontSize="14" 
-                               TextColor="White" />
-                            <Label Text="{Binding ACFPrecio, StringFormat='Precio: ${0}'}" 
-                               FontSize="14" 
-                               TextColor="#FFD700" 
-                               FontAttributes="Bold" />
-                            <Label Text="{Binding ACFTelefono, StringFormat='Teléfono: {0}'}" 
-                               FontSize="14" 
-                               TextColor="White" />
-                        </StackLayout>
-                    </Frame>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+            <Label Text="EasyTickets" 
+                   FontSize="36" 
+                   HorizontalOptions="Center" 
+                   TextColor="#5B5BFF" 
+                   FontAttributes="Bold" />
+
+            <Label Text="¡La mejor plataforma para encontrar, comprar y vender tickets!" 
+                   FontSize="18" 
+                   HorizontalOptions="Center" 
+                   TextColor="Black" 
+                   HorizontalTextAlignment="Center" />
+
+            <Label Text="Con EasyTickets podrás buscar los mejores eventos, gestionar tus entradas, guardar tus eventos favoritos y mucho más. 
+                          También puedes comprar o vender tickets de manera sencilla y segura, e incluso dejar reseñas para otros usuarios."
+                   FontSize="16"
+                   TextColor="Black"
+                   HorizontalTextAlignment="Center" />
+
+            <VerticalStackLayout Spacing="10" HorizontalOptions="FillAndExpand" >
+                <Frame Padding="10" Margin="5" BackgroundColor="#FFFFFF" CornerRadius="10" HasShadow="True">
+                    <HorizontalStackLayout>
+                        <Label Text="🎟" FontSize="24" VerticalOptions="Center"/>
+                        <Label Text="Descubre eventos únicos cerca de ti." 
+                               FontSize="16" 
+                               VerticalOptions="Center" 
+                               TextColor="#303030" />
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Frame Padding="10" Margin="5" BackgroundColor="#FFFFFF" CornerRadius="10" HasShadow="True">
+                    <HorizontalStackLayout>
+                        <Label Text="🛒" FontSize="24" VerticalOptions="Center"/>
+                        <Label Text="Compra y vende entradas con facilidad." 
+                               FontSize="16" 
+                               VerticalOptions="Center" 
+                               TextColor="#303030" />
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Frame Padding="10" Margin="5" BackgroundColor="#FFFFFF" CornerRadius="10" HasShadow="True">
+                    <HorizontalStackLayout>
+                        <Label Text="⭐" FontSize="24" VerticalOptions="Center"/>
+                        <Label Text="Deja reseñas para eventos y tickets." 
+                               FontSize="16" 
+                               VerticalOptions="Center" 
+                               TextColor="#303030" />
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Frame Padding="10" Margin="5" BackgroundColor="#FFFFFF" CornerRadius="10" HasShadow="True">
+                    <HorizontalStackLayout>
+                        <Label Text="💾" FontSize="24" VerticalOptions="Center"/>
+                        <Label Text="Guarda eventos que no te quieres perder." 
+                               FontSize="16" 
+                               VerticalOptions="Center" 
+                               TextColor="#303030" />
+                    </HorizontalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>
