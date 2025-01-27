@@ -23,27 +23,21 @@ namespace AbCorFlorProyectoP2EasyTicketsMAUI.Services
         {
             try
             {
-                // Construir la URL de la API con la clave API
                 string requestUrl = $"{EventosApiBaseUrl}.json?apikey={ApiKey}";
 
-                // Realizar la solicitud HTTP GET
                 var response = await _httpClient.GetStringAsync(requestUrl);
 
-                // Deserializar la respuesta JSON a un objeto ACFRoot
                 var root = JsonConvert.DeserializeObject<ACFRoot>(response);
 
-                // Verificar si se obtuvieron eventos
                 if (root?.Embedded?.Events != null)
                 {
                     return root.Embedded.Events;
                 }
 
-                // Si no hay eventos, devolver una lista vacía
                 return new List<ACFEventos>();
             }
             catch (Exception ex)
             {
-                // Manejar errores (puedes loguear el error o mostrar un mensaje)
                 Console.WriteLine($"Error fetching events: {ex.Message}");
                 return new List<ACFEventos>();
             }
