@@ -33,20 +33,18 @@ namespace AbCorFlorProyectoP2EasyTicketsMAUI.ViewModels
 
         public ACFEventosViewModel()
         {
-            _apiService = new ACFApiPublicaService(); // Inicializa el servicio de API
-            CargarEventos(); // Carga los eventos al inicializar el ViewModel
+            _apiService = new ACFApiPublicaService(); 
+            CargarEventos(); 
         }
 
         private async void CargarEventos()
         {
-            Cargando = true; // Indica que la carga está en progreso
+            Cargando = true; 
 
             try
             {
-                // Obtiene los eventos desde la API
                 var eventos = await _apiService.GetEventosAsync();
 
-                // Limpia la lista actual y agrega los nuevos eventos
                 Eventos.Clear();
                 foreach (var evento in eventos)
                 {
@@ -55,12 +53,12 @@ namespace AbCorFlorProyectoP2EasyTicketsMAUI.ViewModels
             }
             catch (Exception ex)
             {
-                // Maneja errores (puedes mostrar un mensaje al usuario o loguear el error)
+                
                 Console.WriteLine($"Error al cargar eventos: {ex.Message}");
             }
             finally
             {
-                Cargando = false; // Indica que la carga ha terminado
+                Cargando = false; 
             }
         }
 

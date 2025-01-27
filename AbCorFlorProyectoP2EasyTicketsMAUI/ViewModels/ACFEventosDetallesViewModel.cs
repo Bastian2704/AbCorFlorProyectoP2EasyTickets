@@ -31,7 +31,6 @@ namespace AbCorFlorProyectoP2EasyTicketsMAUI.ViewModels
 
         public ACFEventosDetallesViewModel()
         {
-            // BD SIN argumentos
             _dataService = new ACFDataService();
 
             GuardarCommand = new Command(OnGuardar);
@@ -40,14 +39,13 @@ namespace AbCorFlorProyectoP2EasyTicketsMAUI.ViewModels
 
         public void Initialize(ACFEventos eventoSeleccionado)
         {
-            Eventos = eventoSeleccionado ?? new ACFEventos(); // Inicializa un nuevo evento si es nulo
+            Eventos = eventoSeleccionado ?? new ACFEventos(); 
         }
 
         private async void OnGuardar()
         {
             if (Eventos != null)
             {
-                // Guardar evento en BD
                 await _dataService.SaveEventAsync(Eventos);
                 await Application.Current.MainPage.DisplayAlert("Éxito", "Evento guardado correctamente.", "OK");
             }
